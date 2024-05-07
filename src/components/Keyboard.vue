@@ -5,82 +5,82 @@ import Button from './Key.vue'
 <template>
     <div class="keyboard">
         <div class="row">
-            <Button class="key" />
-            <Button class="key" :text="'1'" />
-            <Button class="key" :text="'2'" />
-            <Button class="key" :text="'3'" />
-            <Button class="key" :text="'4'" />
-            <Button class="key" :text="'5'" />
-            <Button class="key" :text="'6'" />
-            <Button class="key" :text="'7'" />
-            <Button class="key" :text="'8'" />
-            <Button class="key" :text="'9'" />
-            <Button class="key" :text="'0'" />
-            <Button class="key" :text="'-'" />
-            <Button class="key" :text="'+'" />
-            <Button class="key key__w100" />
+            <Button :type="'escape'"/>
+            <Button :text="'1'" />
+            <Button :text="'2'" />
+            <Button :text="'3'" />
+            <Button :text="'4'" />
+            <Button :text="'5'" />
+            <Button :text="'6'" />
+            <Button :text="'7'" />
+            <Button :text="'8'" />
+            <Button :text="'9'" />
+            <Button :text="'0'" />
+            <Button :text="'-'" />
+            <Button :text="'+'" />
+            <Button :type="'backspace'"/>
         </div>
 
         <div class="row">
-            <Button class="key key__w75" />
-            <Button class="key" :text="'Q'" />
-            <Button class="key" :text="'W'" />
-            <Button class="key" :text="'E'" />
-            <Button class="key" :text="'R'" />
-            <Button class="key" :text="'T'" />
-            <Button class="key" :text="'Y'" />
-            <Button class="key" :text="'U'" />
-            <Button class="key" :text="'I'" />
-            <Button class="key" :text="'O'" />
-            <Button class="key" :text="'P'" />
-            <Button class="key" :text="'['" />
-            <Button class="key" :text="']'" />
-            <Button class="key key__w75" />
+            <Button :type="'tab'"/>
+            <Button :text="'Q'" />
+            <Button :text="'W'" />
+            <Button :text="'E'" />
+            <Button :text="'R'" />
+            <Button :text="'T'" />
+            <Button :text="'Y'" />
+            <Button :text="'U'" />
+            <Button :text="'I'" />
+            <Button :text="'O'" />
+            <Button :text="'P'" />
+            <Button :text="'['" />
+            <Button :text="']'" />
+            <Button :type="'slash'"/>
         </div>
 
         <div class="row">
-            <Button class="key key__w90" />
-            <Button class="key" :text="'A'" />
-            <Button class="key" :text="'S'" />
-            <Button class="key" :text="'D'" />
-            <Button class="key" :text="'F'" />
-            <Button class="key" :text="'G'" />
-            <Button class="key" :text="'H'" />
-            <Button class="key" :text="'J'" />
-            <Button class="key" :text="'K'" />
-            <Button class="key" :text="'L'" />
-            <Button class="key" :text="':'" />
-            <Button class="key" :text="'\''" />
-            <Button class="key key__w112" />
+            <Button :type="'caps'" />
+            <Button :text="'A'" />
+            <Button :text="'S'" />
+            <Button :text="'D'" />
+            <Button :text="'F'" />
+            <Button :text="'G'" />
+            <Button :text="'H'" />
+            <Button :text="'J'" />
+            <Button :text="'K'" />
+            <Button :text="'L'" />
+            <Button :text="':'" />
+            <Button :text="'\''" />
+            <Button :type="'enter'" />
         </div>
 
         <div class="row">
-            <Button class="key key__w100" />
-            <Button class="key" :text="'Z'" />
-            <Button class="key" :text="'X'" />
-            <Button class="key" :text="'C'" />
-            <Button class="key" :text="'V'" />
-            <Button class="key" :text="'B'" />
-            <Button class="key" :text="'N'" />
-            <Button class="key" :text="'M'" />
-            <Button class="key" :text="'<'" />
-            <Button class="key" :text="'>'" />
-            <Button class="key" :text="'?'" />
-            <Button class="key" />
-            <Button class="key" />
-            <Button class="key" />
+            <Button :type="'shift'" />
+            <Button :text="'Z'" />
+            <Button :text="'X'" />
+            <Button :text="'C'" />
+            <Button :text="'V'" />
+            <Button :text="'B'" />
+            <Button :text="'N'" />
+            <Button :text="'M'" />
+            <Button :text="'<'" />
+            <Button :text="'>'" />
+            <Button :text="'?'" />
+            <Button />
+            <Button :type="'controls'"/>
+            <Button />
         </div>
 
         <div class="row">
-            <Button class="key key__w70"/>
-            <Button class="key key__w70"/>
-            <Button class="key key__w70"/>
-            <Button class="key key__w300"/>
-            <Button class="key"/>
-            <Button class="key"/>
-            <Button class="key"/>
-            <Button class="key"/>
-            <Button class="key"/>
+            <Button :type="'empty'"/>
+            <Button :type="'empty'"/>
+            <Button :type="'empty'"/>
+            <Button :type="'space'"/>
+            <Button />
+            <Button />
+            <Button :type="'controls'"/>
+            <Button :type="'controls'"/>
+            <Button :type="'controls'"/>
         </div>
     </div>
 </template>
@@ -98,42 +98,5 @@ import Button from './Key.vue'
 .row {
     margin-top: 2px;
     overflow: hidden;
-}
-
-.key {
-    width: 50px;
-    height: 50px;
-    float: left;
-    cursor: pointer;
-    background-color: var(--off-white);
-    color: #000000;
-    line-height: 48px;
-    text-align: center;
-    margin-left: 2px;
-    border-radius: 4px;
-}
-
-.key__w100 {
-    width: 100px;
-}
-
-.key__w75 {
-  width: 75px;
-}
-
-.key__w90 {
-  width: 90px;
-}
-
-.key__w112 {
-  width: 112px;
-}
-
-.key__w70 {
-  width: 70px;
-}
-
-.key__w300 {
-  width: 300px;
 }
 </style>
