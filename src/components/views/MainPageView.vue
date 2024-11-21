@@ -1,18 +1,34 @@
-<script setup lang="ts">
-    import Keyboard from '../Keyboard.vue';
+<script setup>
+	import Header from '../Header.vue';
+	import Footer from '../Footer.vue';
 </script>
 
 <template>
-    <div class="table">
-        <Keyboard class="keyboard"/>
-    </div>
+	<div class="main-page">
+		<Header />
+		<div class="main-page__content">{{ 'Главная страница' }}</div>
+		<Footer />
+	</div>
 </template>
 
-<style>
-.table {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+<style scoped lang="scss">
+@import '../../assets/styles/style';
+
+.main-page {
+	display:             flex;
+	flex-direction:      column;
+	width:               100%;
+	height:              100vh;
+	background-color:    $samurai;
+	@extend %font-family;
+
+	&__content {
+		height:          90%;
+		display:         flex;
+		flex-direction:  column;
+		justify-content: center;
+		align-items:     center;
+		gap:             5px;
+	}
 }
 </style>

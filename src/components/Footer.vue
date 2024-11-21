@@ -1,11 +1,34 @@
-<script setup lang="ts">
+<script setup>
 
 </script>
 
 <template>
-    <div></div>
+	<div class="footer">
+		<div>{{ 'Developed by Yusheero' }}</div>
+		<a class="footer__link" rel="stylesheet" href="https://github.com/Yusheero"></a>
+	</div>
 </template>
 
-<style>
+<style scoped lang="scss">
+@import '../assets/styles/style';
 
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	height: 5%;
+	color: $snow;
+	background-color: $sparrow;
+	font-family: "Host Grotesk", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+
+	&__link {
+		width: 25px;
+		height: 25px;
+		background-image: url("../assets/icons/github-logo-24.png");
+	}
+}
 </style>
