@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     export default {
         props: {
             text: String,
@@ -63,5 +63,5 @@
 
 .key__empty {
     width: 70px;
-} 
+}
 </style>
