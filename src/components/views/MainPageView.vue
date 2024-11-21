@@ -1,12 +1,15 @@
 <script setup>
 	import Header from '../Header.vue';
 	import Footer from '../Footer.vue';
+	import Menu from "../Menu.vue";
 </script>
 
 <template>
 	<div class="main-page">
 		<Header />
-		<div class="main-page__content">{{ 'Главная страница' }}</div>
+		<div class="main-page__content">
+			<Menu />
+		</div>
 		<Footer />
 	</div>
 </template>
