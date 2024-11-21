@@ -1,9 +1,9 @@
-<script setup lang="ts">
-    import MainPageView from './components/views/MainPageView.vue';
+<script setup>
+	import LoginPageView from "./components/views/LoginPageView.vue";
 </script>
 
 <template>
-    <MainPageView />
+	<LoginPageView />
 </template>
 
 <style>
