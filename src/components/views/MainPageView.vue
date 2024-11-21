@@ -22,7 +22,7 @@
 	flex-direction:      column;
 	width:               100%;
 	height:              100vh;
-	background-color:    $samurai;
+	background-color:    $gardener-dark;
 	@extend %font-family;
 
 	&__content {

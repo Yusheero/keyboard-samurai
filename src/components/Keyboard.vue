@@ -1,86 +1,86 @@
-<script setup lang="ts">
-import Button from './Key.vue'
+<script setup>
+import Key from './Key.vue'
 </script>
 
 <template>
     <div class="keyboard">
         <div class="row">
-            <Button :type="'escape'"/>
-            <Button :text="'1'" />
-            <Button :text="'2'" />
-            <Button :text="'3'" />
-            <Button :text="'4'" />
-            <Button :text="'5'" />
-            <Button :text="'6'" />
-            <Button :text="'7'" />
-            <Button :text="'8'" />
-            <Button :text="'9'" />
-            <Button :text="'0'" />
-            <Button :text="'-'" />
-            <Button :text="'+'" />
-            <Button :type="'backspace'"/>
+            <Key :type="'escape'"/>
+            <Key :text="'1'" />
+            <Key :text="'2'" />
+            <Key :text="'3'" />
+            <Key :text="'4'" />
+            <Key :text="'5'" />
+            <Key :text="'6'" />
+            <Key :text="'7'" />
+            <Key :text="'8'" />
+            <Key :text="'9'" />
+            <Key :text="'0'" />
+            <Key :text="'-'" />
+            <Key :text="'+'" />
+            <Key :type="'backspace'"/>
         </div>
 
         <div class="row">
-            <Button :type="'tab'"/>
-            <Button :text="'Q'" />
-            <Button :text="'W'" />
-            <Button :text="'E'" />
-            <Button :text="'R'" />
-            <Button :text="'T'" />
-            <Button :text="'Y'" />
-            <Button :text="'U'" />
-            <Button :text="'I'" />
-            <Button :text="'O'" />
-            <Button :text="'P'" />
-            <Button :text="'['" />
-            <Button :text="']'" />
-            <Button :type="'slash'"/>
+            <Key :type="'tab'"/>
+            <Key :text="'Q'" />
+            <Key :text="'W'" />
+            <Key :text="'E'" />
+            <Key :text="'R'" />
+            <Key :text="'T'" />
+            <Key :text="'Y'" />
+            <Key :text="'U'" />
+            <Key :text="'I'" />
+            <Key :text="'O'" />
+            <Key :text="'P'" />
+            <Key :text="'['" />
+            <Key :text="']'" />
+            <Key :type="'slash'"/>
         </div>
 
         <div class="row">
-            <Button :type="'caps'" />
-            <Button :text="'A'" />
-            <Button :text="'S'" />
-            <Button :text="'D'" />
-            <Button :text="'F'" />
-            <Button :text="'G'" />
-            <Button :text="'H'" />
-            <Button :text="'J'" />
-            <Button :text="'K'" />
-            <Button :text="'L'" />
-            <Button :text="':'" />
-            <Button :text="'\''" />
-            <Button :type="'enter'" />
+            <Key :type="'caps'" />
+            <Key :text="'A'" />
+            <Key :text="'S'" />
+            <Key :text="'D'" />
+            <Key :text="'F'" />
+            <Key :text="'G'" />
+            <Key :text="'H'" />
+            <Key :text="'J'" />
+            <Key :text="'K'" />
+            <Key :text="'L'" />
+            <Key :text="':'" />
+            <Key :text="'\''" />
+            <Key :type="'enter'" />
         </div>
 
         <div class="row">
-            <Button :type="'shift'" />
-            <Button :text="'Z'" />
-            <Button :text="'X'" />
-            <Button :text="'C'" />
-            <Button :text="'V'" />
-            <Button :text="'B'" />
-            <Button :text="'N'" />
-            <Button :text="'M'" />
-            <Button :text="'<'" />
-            <Button :text="'>'" />
-            <Button :text="'?'" />
-            <Button />
-            <Button :type="'controls'"/>
-            <Button />
+            <Key :type="'shift'" />
+            <Key :text="'Z'" />
+            <Key :text="'X'" />
+            <Key :text="'C'" />
+            <Key :text="'V'" />
+            <Key :text="'B'" />
+            <Key :text="'N'" />
+            <Key :text="'M'" />
+            <Key :text="'<'" />
+            <Key :text="'>'" />
+            <Key :text="'?'" />
+            <Key />
+            <Key :type="'controls'"/>
+            <Key />
         </div>
 
         <div class="row">
-            <Button :type="'empty'"/>
-            <Button :type="'empty'"/>
-            <Button :type="'empty'"/>
-            <Button :type="'space'"/>
-            <Button />
-            <Button />
-            <Button :type="'controls'"/>
-            <Button :type="'controls'"/>
-            <Button :type="'controls'"/>
+            <Key :type="'empty'"/>
+            <Key :type="'empty'"/>
+            <Key :type="'empty'"/>
+            <Key :type="'space'"/>
+            <Key />
+            <Key />
+            <Key :type="'controls'"/>
+            <Key :type="'controls'"/>
+            <Key :type="'controls'"/>
         </div>
     </div>
 </template>
@@ -89,7 +89,7 @@ import Button from './Key.vue'
 .keyboard {
     width: 780px;
     height: 262px;
-    margin: 0px auto;
+    margin: 0 auto;
     border: 3px solid #000000;
     border-radius: 8px;
     background: #000000;
