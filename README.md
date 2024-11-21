@@ -1,3 +1,3 @@
-# KEYBOARD SAMURAI
+# Keyboard Samurai
 
-## ПРОКАЧАЙ СВОИ ПАЛЬЦЫ
+## Train your fingers, be strong, be the best
