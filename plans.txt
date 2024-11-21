@@ -3,3 +3,9 @@ configure and repair Routing
 build MainPageView
 build GamePageView
 think through the logic
+
+ru:
+В LoginPageView реализовать сохранение введенного значения в Store
+В LoginPageView реализовать сохранение введенного значения по клавише ENTER
+Проверить сохраняется ли значение сложности в Store
+Починить клавиатуру в GamePageView

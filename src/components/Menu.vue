@@ -1,56 +1,48 @@
 <script setup>
+import { useKeyboardStore } from '@/store/store.js'
+
+const store = useKeyboardStore()
+
 /** Установка сложности игры */
 const setDifficult = (dif) => {
 	console.log('Установка сложности');
-
-	switch (dif) {
-		case 1:
-			console.log('Установлена сложность 1');
-			// Мутация в стор с сложностью 1
-			return
-		case 2:
-			console.log('Установлена сложность 2');
-			// Мутация в стор с сложностью 2
-			return
-		case 3:
-			console.log('Установлена сложность 3');
-			// Мутация в стор с сложностью 3
-			return
-	}
+	store.difficult = dif;
 }
 </script>
 
 <template>
 	<div class="menu__wrapper">
 		<h2 class="menu__title">{{ 'Set Difficult' }}</h2>
-		<div class="menu__buttons">
+		<div class="menu__cards">
 
 			<div class="menu__card">
 				<div class="menu__card-image menu__card-image-cat1"></div>
-				<button class="menu__button" onclick="setDifficult(1)">EASY</button>
+				<button class="menu__button" @click="setDifficult(1)">EASY</button>
 			</div>
 
 			<div class="menu__card">
 				<div class="menu__card-image menu__card-image-cat2"></div>
-				<button class="menu__button" onclick="setDifficult(2)">MIDDLE</button>
+				<button class="menu__button" @click="setDifficult(2)">MIDDLE</button>
 			</div>
 
 			<div class="menu__card">
 				<div class="menu__card-image menu__card-image-cat3"></div>
-				<button class="menu__button" onclick="setDifficult(3)">HARD</button>
+				<button class="menu__button" @click="setDifficult(3)">HARD</button>
 			</div>
 
 			<div class="menu__card">
 				<div class="menu__card-image menu__card-image-cat4"></div>
-				<button class="menu__button" onclick="setDifficult(3)">HARDCORE</button>
+				<button class="menu__button" @click="setDifficult(3)">HARDCORE</button>
 			</div>
 
 			<div class="menu__card">
 				<div class="menu__card-image menu__card-image-cat5"></div>
-				<button class="menu__button" onclick="setDifficult(3)">GOD</button>
+				<button class="menu__button" @click="setDifficult(3)">GOD</button>
 			</div>
 
 		</div>
+
+		<router-link class="menu__button router__button" to="/game">Start Training</router-link>
 	</div>
 </template>
 
@@ -63,7 +55,7 @@ const setDifficult = (dif) => {
 		flex-direction:  column;
 		justify-content: center;
 		align-items:     center;
-		gap: 16px;
+		gap: 64px;
 	}
 
 	&__title {
@@ -71,24 +63,24 @@ const setDifficult = (dif) => {
 		color: $snow;
 	}
 
-	&__buttons {
+	&__cards {
 		display:         flex;
 		flex-direction:  row;
 		justify-content: center;
 		align-items:     center;
-		gap: 16px;
+		gap: 48px;
 	}
 
 	&__card {
-		border:        2px solid $snow;
-		border-radius: 8px;
-		width:         200px;
-		height:        200px;
+		display:         flex;
+		flex-direction: column;
+		gap: 6px;
 	}
 
 	&__card-image {
 		width: 200px;
 		height: 200px;
+		border: 2px solid $snow;
 		border-radius: 7px;
 		background-size:  contain;
 	}
@@ -116,7 +108,6 @@ const setDifficult = (dif) => {
 	&__button {
 		border:        2px solid $snow;
 		border-radius: 5px;
-		width:         150px;
 		height:        40px;
 		display:         flex;
 		flex-direction:  column;

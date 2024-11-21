@@ -4,8 +4,7 @@
 </script>
 
 <template>
-	<LoginPageView v-if="false" />
-	<MainPageView />
+	<RouterView />
 </template>
 
 <style>

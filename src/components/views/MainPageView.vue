@@ -1,12 +1,17 @@
 <script setup>
-	import Header from '../Header.vue';
-	import Footer from '../Footer.vue';
-	import Menu from "../Menu.vue";
+import Header from '../Header.vue';
+import Footer from '../Footer.vue';
+import Menu from "../Menu.vue";
+
+import { useKeyboardStore } from '@/store/store.js'
+
+const store = useKeyboardStore();
 </script>
 
 <template>
 	<div class="main-page">
 		<Header />
+		{{ store.name }}
 		<div class="main-page__content">
 			<Menu />
 		</div>

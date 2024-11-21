@@ -1,6 +1,27 @@
 <script setup>
 import Header from '../Header.vue';
 import Footer from '../Footer.vue';
+
+import { useKeyboardStore } from '@/store/store.js'
+
+const store = useKeyboardStore();
+
+// /** Слушатель события нажатия кнопки 'Lets Start' */
+// const startButton = document.getElementById('start-button');
+// startButton.addEventListener('click', () => {
+// 	console.log('button click');
+
+// 	const input = document.getElementById('name-input')
+// 	const inputValue = input.value;
+
+// 	setInputValue(inputValue);
+// })
+
+// /** Обработка введенного в инпут значения */
+// const setInputValue = (name) => {
+// 	console.log('name', name);
+// 	store.name = name;
+// }
 </script>
 
 <template>
@@ -8,15 +29,15 @@ import Footer from '../Footer.vue';
 		<Header />
 		<div class="login-page__content">
 			<div class="login-page__title">{{ 'Call Yourself, Samurai' }}</div>
-			<input class="login-page__input" type="text">
-			<RouterLink class="login-page__button" to="/main">Let's Start</RouterLink>
+			<input id="name-input" class="login-page__input" type="text">
+			<RouterLink id="start-button" class="login-page__button" to="/main">Let's Start</RouterLink>
 		</div>
 		<Footer />
 	</div>
 </template>
 
 <style lang="scss">
-@import '../../assets/styles/style';
+@import '@assets/styles/style';
 
 .login-page {
 	display:             flex;
