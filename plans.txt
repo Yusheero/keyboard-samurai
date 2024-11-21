@@ -1,0 +1,5 @@
+update and styling README
+configure and repair Routing
+build MainPageView
+build GamePageView
+think through the logic
