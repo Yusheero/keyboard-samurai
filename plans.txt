@@ -1,11 +1,8 @@
 update and styling README
-configure and repair Routing
-build MainPageView
 build GamePageView
 think through the logic
 
 ru:
-В LoginPageView реализовать сохранение введенного значения в Store
-В LoginPageView реализовать сохранение введенного значения по клавише ENTER
-Проверить сохраняется ли значение сложности в Store
-Починить клавиатуру в GamePageView
+Починить и реализовать клавиатуру в GamePageView (Либо через массив и мап, либо через grid-areas)
+Поменять шрифт у Header (Сделать более мощным)
+Поработать над карточками выбора сложности

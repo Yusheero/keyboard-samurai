@@ -11,7 +11,6 @@ const store = useKeyboardStore();
 <template>
 	<div class="main-page">
 		<Header />
-		{{ store.name }}
 		<div class="main-page__content">
 			<Menu />
 		</div>

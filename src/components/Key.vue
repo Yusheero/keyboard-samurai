@@ -11,13 +11,13 @@
     <div :class="'key key__' + type" > {{ text }} </div>
 </template>
 
-<style>
+<style scoped>
 .key {
     width: 50px;
     height: 50px;
     float: left;
     cursor: pointer;
-    background-color: var(--off-white);
+    background-color: #fff;
     color: #000000;
     line-height: 48px;
     text-align: center;
