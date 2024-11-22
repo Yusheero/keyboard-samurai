@@ -1,7 +1,7 @@
 <script setup>
-import Header from '../Header.vue';
-import Footer from '../Footer.vue';
-import Menu from "../Menu.vue";
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Menu from "@/components/menu/Menu.vue";
 
 import { useKeyboardStore } from '@/store/store.js'
 
@@ -19,8 +19,6 @@ const store = useKeyboardStore();
 </template>
 
 <style scoped lang="scss">
-@import '../../assets/styles/style';
-
 .main-page {
 	display:             flex;
 	flex-direction:      column;

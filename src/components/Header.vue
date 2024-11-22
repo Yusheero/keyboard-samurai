@@ -9,8 +9,6 @@
 </template>
 
 <style scoped lang="scss">
-@import '../assets/styles/style';
-
 .header {
 	display:             flex;
 	justify-content:     center;

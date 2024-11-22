@@ -1,7 +1,18 @@
 <script setup>
 import { useKeyboardStore } from '@/store/store.js'
+import MenuCard from '@/components/menu/MenuCard.vue';
+import { ref } from 'vue';
 
 const store = useKeyboardStore()
+
+/** Данные для карточек с сложностью */
+const cards = ref([
+	{ difficult: 'easy', image: '-cat1' },
+	{ difficult: 'middle', image: '-cat2' },
+	{ difficult: 'hard', image: '-cat3' },
+	{ difficult: 'hardcore', image: '-cat4' },
+	{ difficult: 'god', image: '-cat5' }
+]);
 
 /** Установка сложности игры */
 const setDifficult = (dif) => {
@@ -12,34 +23,8 @@ const setDifficult = (dif) => {
 
 <template>
 	<div class="menu__wrapper">
-		<h2 class="menu__title">{{ 'Set Difficult' }}</h2>
 		<div class="menu__cards">
-
-			<div class="menu__card">
-				<div class="menu__card-image menu__card-image-cat1"></div>
-				<button class="menu__button" @click="setDifficult(1)">EASY</button>
-			</div>
-
-			<div class="menu__card">
-				<div class="menu__card-image menu__card-image-cat2"></div>
-				<button class="menu__button" @click="setDifficult(2)">MIDDLE</button>
-			</div>
-
-			<div class="menu__card">
-				<div class="menu__card-image menu__card-image-cat3"></div>
-				<button class="menu__button" @click="setDifficult(3)">HARD</button>
-			</div>
-
-			<div class="menu__card">
-				<div class="menu__card-image menu__card-image-cat4"></div>
-				<button class="menu__button" @click="setDifficult(3)">HARDCORE</button>
-			</div>
-
-			<div class="menu__card">
-				<div class="menu__card-image menu__card-image-cat5"></div>
-				<button class="menu__button" @click="setDifficult(3)">GOD</button>
-			</div>
-
+			<MenuCard :cards="cards"></MenuCard>
 		</div>
 
 		<router-link class="menu__button router__button" to="/game">Start Training</router-link>
@@ -47,8 +32,6 @@ const setDifficult = (dif) => {
 </template>
 
 <style scoped lang="scss">
-@import '../assets/styles/style';
-
 .menu {
 	&__wrapper {
 		display:         flex;
@@ -72,15 +55,17 @@ const setDifficult = (dif) => {
 	}
 
 	&__card {
+		height: 400px;
 		display:         flex;
 		flex-direction: column;
 		gap: 6px;
+		border: 2px solid style.$snow;
+		border-radius: 8px;
 	}
 
 	&__card-image {
 		width: 200px;
 		height: 200px;
-		border: 2px solid $snow;
 		border-radius: 7px;
 		background-size:  contain;
 	}
@@ -90,11 +75,11 @@ const setDifficult = (dif) => {
 	}
 
 	&__card-image-cat2 {
-		background-image: url("../assets/images/cat_2.jpg");
+		background-image: url("../assets/images/cat_3.jpg");
 	}
 
 	&__card-image-cat3 {
-		background-image: url("../assets/images/cat_3.jpg");
+		background-image: url("../assets/images/cat_2.jpg");
 	}
 
 	&__card-image-cat4 {
@@ -106,7 +91,6 @@ const setDifficult = (dif) => {
 	}
 
 	&__button {
-		border:        2px solid $snow;
 		border-radius: 5px;
 		height:        40px;
 		display:         flex;

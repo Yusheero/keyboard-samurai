@@ -1,7 +1,10 @@
+@use "reset.scss";
+@use "color.scss";
 @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
 
-@import "colors.scss";
-@import "reset.scss";
+/** Переменные */
+--snow: #f3e3de;
+--imperator: #d6a98c;
 
 %font-family {
 	font-family:         "Host Grotesk", sans-serif;

@@ -8,12 +8,19 @@ import { useKeyboardStore } from '@/store/store.js'
 const router = useRouter();
 const store = useKeyboardStore();
 
-function goToStart() {
+function Login() {
 	if (!store.name) {
 		return
 	}
 
+	/** Объект с логином и временем */
+	const currentUser = {
+		userName: store.name,
+		loginTime: new Date(),
+	}
+
 	router.push('/main');
+	localStorage.setItem('userName', currentUser);
 }
 </script>
 
@@ -22,22 +29,20 @@ function goToStart() {
 		<Header /> 
 		<div class="login-page__content">
 			<div class="login-page__title">{{ 'Call Yourself, Samurai' }}</div>
-			<input v-model="store.name" @keydown.enter="goToStart" class="login-page__input" type="text">
-			<button class="login-page__button" @click="goToStart">Let's Start</button>
+			<input v-model="store.name" @keydown.enter="Login" class="login-page__input" type="text">
+			<button class="login-page__button" @click="Login">Let's Start</button>
 		</div>
 		<Footer />
 	</div>
 </template>
 
-<style lang="scss">
-@import '@assets/styles/style';
-
+<style scoped lang="scss">
 .login-page {
 	display:             flex;
 	flex-direction:      column;
 	width:               100%;
 	height:              100vh;
-	background-color:    $imperator;
+	background-color:    var(--imperator);
 	@extend %font-family;
 
 	&__content {

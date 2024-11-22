@@ -1,7 +1,7 @@
 <script setup>
-    import Header from '@components/Header.vue';
-    import Footer from '@components/Footer.vue';
-    import Keyboard from '@components/Keyboard.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import Keyboard from '@/components/Keyboard.vue';
 </script>
 
 <template>
@@ -16,15 +16,13 @@
     </div>
 </template>
 
-<style scoped lang="scss">
-@import '../../assets/styles/style';
-
+<st lang="scss">
 .game-page {
 	display:             flex;
 	flex-direction:      column;
 	width:               100%;
 	height:              100vh;
-	background-color:    $imperator;
+	background-color:    var(--imperator);
 	@extend %font-family;
 
 	&__content {
