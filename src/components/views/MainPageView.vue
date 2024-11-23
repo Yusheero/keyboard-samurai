@@ -1,21 +1,21 @@
 <script setup>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-import Menu from "@/components/menu/Menu.vue";
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import Menu from '@/components/menu/Menu.vue'
 
 import { useKeyboardStore } from '@/store/store.js'
 
-const store = useKeyboardStore();
+const store = useKeyboardStore()
 </script>
 
 <template>
-	<div class="main-page">
-		<Header />
-		<div class="main-page__content">
-			<Menu />
-		</div>
-		<Footer />
-	</div>
+  <div class="main-page">
+    <Header />
+    <div class="main-page__content">
+      <Menu />
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -24,8 +24,7 @@ const store = useKeyboardStore();
 	flex-direction:      column;
 	width:               100%;
 	height:              100vh;
-	background-color:    $gardener-dark;
-	@extend %font-family;
+	background-color:    var(--imperator);
 
 	&__content {
 		height:          90%;
@@ -34,6 +33,7 @@ const store = useKeyboardStore();
 		justify-content: center;
 		align-items:     center;
 		gap:             5px;
+		@include font-family
 	}
 }
 </style>

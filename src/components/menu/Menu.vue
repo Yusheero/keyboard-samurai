@@ -1,34 +1,36 @@
 <script setup>
+import image1 from '@/assets/images/cat1.jpg';
+import image2 from '@/assets/images/cat2.jpg';
+import image3 from '@/assets/images/cat3.jpg';
+import image4 from '@/assets/images/cat4.jpg';
+import image5 from '@/assets/images/cat5.jpg';
+import MenuCard from '@/components/menu/MenuCard.vue'
 import { useKeyboardStore } from '@/store/store.js'
-import MenuCard from '@/components/menu/MenuCard.vue';
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 const store = useKeyboardStore()
 
 /** Данные для карточек с сложностью */
 const cards = ref([
-	{ difficult: 'easy', image: '-cat1' },
-	{ difficult: 'middle', image: '-cat2' },
-	{ difficult: 'hard', image: '-cat3' },
-	{ difficult: 'hardcore', image: '-cat4' },
-	{ difficult: 'god', image: '-cat5' }
-]);
-
-/** Установка сложности игры */
-const setDifficult = (dif) => {
-	console.log('Установка сложности');
-	store.difficult = dif;
-}
+  { difficult: 'easy', image: image1 },
+  { difficult: 'middle', image: image2 },
+  { difficult: 'hard', image: image3 },
+  { difficult: 'hardcore', image: image4 },
+  { difficult: 'god', image: image5 },
+])
 </script>
 
 <template>
-	<div class="menu__wrapper">
-		<div class="menu__cards">
-			<MenuCard :cards="cards"></MenuCard>
-		</div>
+  <div class="menu__wrapper">
+		{{ store.difficult }}
+    <div class="menu__cards">
+      <MenuCard v-for="(card, index) of cards" :card="card" :key="index"/>
+    </div>
 
-		<router-link class="menu__button router__button" to="/game">Start Training</router-link>
-	</div>
+    <router-link class="menu__button router__button" to="/game">
+      Start Training
+    </router-link>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -43,7 +45,7 @@ const setDifficult = (dif) => {
 
 	&__title {
 		font-size: 20px;
-		color: $snow;
+		color: var(--snow);
 	}
 
 	&__cards {
@@ -59,7 +61,7 @@ const setDifficult = (dif) => {
 		display:         flex;
 		flex-direction: column;
 		gap: 6px;
-		border: 2px solid style.$snow;
+		border: 2px solid var(--snow);
 		border-radius: 8px;
 	}
 
@@ -97,19 +99,17 @@ const setDifficult = (dif) => {
 		flex-direction:  column;
 		justify-content: center;
 		align-items:     center;
-		background-color: $sparrow;
-		color: $snow;
+		background-color: var(--sparrow);
+		color: var(--snow);
 		text-decoration: none;
-		@extend %font-family;
-
 
 		&:hover {
-			background-color: $sparrow-light;
+			background-color: var(--sparrow-light);
 			cursor: pointer;
 		}
 
 		&:active {
-			background-color: $sparrow-dark;
+			background-color: var(--sparrow-dark);
 		}
 	}
 }

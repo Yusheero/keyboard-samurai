@@ -1,59 +1,75 @@
 <script setup>
-import Key from './Key.vue'
+import Key from './Key.vue';
 
 const keys = [
-    [
-        {
-             key: 'ESC',
-             class: 'commonKey',
-        },
+  [
+    {
+      key: 'ESC',
+      class: 'commonKey',
+    },
+  ],
+  [
+    {
 
-    ],
-    [
-        {
+    },
+  ],
+  [
+    {
 
-        }
-    ],
-    [
-        {
+    },
+  ],
+  [
+    {
 
-        }
-    ],
-    [
-        {
+    },
+  ],
+  [
+    {
 
-        }
-    ],
-    [
-        {
-
-        }
-    ],
+    },
+  ],
 ]
-
 </script>
 
 <template>
-    <div class="keyboard">
-
-    </div>
+  <div class="keyboard">
+    <Key :key="keys"/>
+  </div>
 </template>
 
 <style scoped>
 .keyboard {
-    display: grid;
-    grid-template-rows: repeat(5, 50px);
-    grid-template-columns: repeat(12, 50px);
-    grid-template-areas:
-    "default default default default default default default default default default default default default"
-    "content content 👾"
-    "content content ."
-    "footer footer footer";
+  
 }
 
 .key-default {
     grid-area: default;
     width: 50px;
+    height: 50px;
+    background-color: aqua;
+}
+
+.key-tab {
+    grid-area: default;
+    width: 70px;
+    height: 50px;
+}
+
+.key-caps {
+    grid-area: default;
+    width: 80px;
+    height: 50px;
+}
+
+.key-enter {
+    grid-area: default;
+    width: 100px;
+    height: 50px;
+}
+
+.key-space {
+    grid-area: default;
+    width: 150px;
     height: 50px;
 }
 

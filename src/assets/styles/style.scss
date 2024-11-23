@@ -1,16 +1,66 @@
-@use "reset.scss";
-@use "color.scss";
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+:root {
+	--snow: #f3e3de;
+	--taboo: #d64b22;
+	--ceremony: #ed7948;
+	--gardenias:      #fbca4d;
+	--samurai:        #6f7b57;
+	--sparrow:        #483759;
+	--sparrow-light:  #5b446f;
+	--sparrow-dark:   #382b46;
+	--imperator:      #d6a98c;
+	--gardener:       #c8171d;
+	--gardener-light: #cc282e;
+	--gardener-dark:  #a01317;
+	--redtree:        #6d1d2a;
+}
 
-/** Переменные */
---snow: #f3e3de;
---imperator: #d6a98c;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-%font-family {
-	font-family:         "Host Grotesk", sans-serif;
-	font-optical-sizing: auto;
-	font-weight:         600;
-	font-style:          normal;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .router {

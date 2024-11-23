@@ -1,14 +1,11 @@
-<script>
-    export default {
-        props: {
-            text: String,
-            type: String,
-        }
-    }
+<script setup>
+defineProps({
+  boardKey: Object,
+})
 </script>
 
 <template>
-    <div :class="'key key__' + type" > {{ text }} </div>
+  <div class="key">{{  }}</div>
 </template>
 
 <style scoped>

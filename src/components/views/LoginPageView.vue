@@ -1,49 +1,53 @@
 <script setup>
-import Header from '../Header.vue';
-import Footer from '../Footer.vue';
-import { useRouter } from 'vue-router';
-
 import { useKeyboardStore } from '@/store/store.js'
+import { useRouter } from 'vue-router'
+import Footer from '../Footer.vue'
 
-const router = useRouter();
-const store = useKeyboardStore();
+import Header from '../Header.vue'
+
+const router = useRouter()
+const store = useKeyboardStore()
 
 function Login() {
-	if (!store.name) {
-		return
-	}
+  if (!store.name) {
+    return
+  }
 
-	/** Объект с логином и временем */
-	const currentUser = {
-		userName: store.name,
-		loginTime: new Date(),
-	}
+  /** Объект с логином и временем */
+  const currentUser = {
+    userName: store.name,
+    loginTime: new Date(),
+  }
 
-	router.push('/main');
-	localStorage.setItem('userName', currentUser);
+  router.push('/main')
+  localStorage.setItem('userName', currentUser)
 }
 </script>
 
 <template>
-	<div class="login-page">
-		<Header /> 
-		<div class="login-page__content">
-			<div class="login-page__title">{{ 'Call Yourself, Samurai' }}</div>
-			<input v-model="store.name" @keydown.enter="Login" class="login-page__input" type="text">
-			<button class="login-page__button" @click="Login">Let's Start</button>
-		</div>
-		<Footer />
-	</div>
+  <div class="login-page">
+    <Header />
+    <div class="login-page__content">
+      <div class="login-page__title">
+        {{ 'Call Yourself, Samurai' }}
+      </div>
+      <input v-model="store.name" class="login-page__input" type="text" @keydown.enter="Login">
+      <button class="login-page__button" @click="Login">
+        Let's Start
+      </button>
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <style scoped lang="scss">
 .login-page {
-	display:             flex;
-	flex-direction:      column;
-	width:               100%;
-	height:              100vh;
-	background-color:    var(--imperator);
-	@extend %font-family;
+  display:             flex;
+  flex-direction:      column;
+  width:               100%;
+  height:              100vh;
+  background-color:    var(--imperator);
+  @include font-family;
 
 	&__content {
 		height:          90%;
@@ -59,18 +63,18 @@ function Login() {
 	}
 
 	&__input {
-		border:        2px solid $snow;
+		border:        2px solid var(--snow);
 		border-radius: 5px;
 		width:         300px;
 		height:        30px;
-		background-color: $imperator;
+		background-color: var(--imperator);
 		padding: 10px;
 		font-size: 18px;
-		@extend %font-family;
+		@include font-family;
 	}
 
 	&__button {
-		border:        2px solid $snow;
+		border:        2px solid var(--snow);
 		border-radius: 5px;
 		width:         320px;
 		height:        40px;
@@ -78,17 +82,17 @@ function Login() {
 		flex-direction:  column;
 		justify-content: center;
 		align-items:     center;
-		background-color: $sparrow;
-		color: $snow;
+		background-color: var(--sparrow);
+		color: var(--snow);
 		text-decoration: none;
-		@extend %font-family;
+		@include font-family;
 
 		&:hover {
-			background-color: $sparrow-light;
+			background-color: var(--sparrow-light);
 		}
 
 		&:active {
-			background-color: $sparrow-dark;
+			background-color: var(--sparrow-dark);
 		}
 	}
 }

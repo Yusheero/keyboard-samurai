@@ -1,13 +1,21 @@
 <script setup>
-const props = defineProps({
-  cards: String
+defineProps({
+  card: Object,
 })
+
+/** Установка сложности игры */
+function setDifficult(dif) {
+  store.difficult = dif
+}
 </script>
+
 <template>
-  <div v-for="card in cards" class="card">
-    <div :class="['card__image', 'card__image' + card.image]"></div>
+  <div class="card">
+    <img class="card__image" :src="card.image">
+    <button @click="setDifficult(card.difficult)" class="card__button">{{ card.difficult }}</button>
   </div>
 </template>
+
 <style scoped lang="scss">
 .card {
   height: 400px;
@@ -17,43 +25,40 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
   gap: 6px;
-  border: 2px solid $snow;
+  border: 2px solid var(--snow);
   border-radius: 8px;
   overflow: hidden;
+  position: relative;
 
   &:hover {
-    cursor: pointer;
-    -webkit-box-shadow: 0px 0px 8px 10px rgba(172, 172, 172, 0.23);
-    -moz-box-shadow: 0px 0px 8px 10px rgba(172, 172, 172, 0.23);
-    box-shadow: 0px 0px 8px 10px rgba(172, 172, 172, 0.23);
+    -webkit-box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
+    -moz-box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
+    box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
+    transition: box-shadow .5s;
   }
 
   &__image {
-    width: 200px;
-		height: 200px;
-		background-size:  contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    scale: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    &-cat1 {
-      background-image: url("@assets/images/cat1.jpg");
-    }
+  &__button {
+    position: absolute;
+    bottom: 0px;
+    color: var(--snow);
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    border: unset;
+    background-color: unset;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 30px;
 
-    &-cat2 {
-      background-image: url("@assets/images/cat2.jpg");
-    }
-
-    &-cat3 {
-      background-image: url("@assets/images/cat3.jpg");
-    }
-
-    &-cat4 {
-      background-image: url("@assets/images/cat4.jpg");
-    }
-
-    &-cat5 {
-      background-image: url("@assets/images/cat5.jpg");
+    &:hover {
+      cursor: pointer;
     }
   }
 }
