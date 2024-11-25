@@ -18,7 +18,7 @@
 	height: 5%;
 	color: var(--snow);
 	background-color: var(--sparrow);
-	@include font-family;
+	@include host-grotesk;
 
 	&__link {
 		width: 25px;

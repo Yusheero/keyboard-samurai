@@ -1,15 +1,16 @@
 <script setup>
 defineProps({
-  boardKey: Object,
+  itemValue: String,
+  itemClass: String
 })
 </script>
 
 <template>
-  <div class="key">{{  }}</div>
+  <div class="common">{{ itemValue }}</div>
 </template>
 
-<style scoped>
-.key {
+<style scoped lang="scss">
+.common {
     width: 50px;
     height: 50px;
     float: left;
@@ -17,9 +18,19 @@ defineProps({
     background-color: #fff;
     color: #000000;
     line-height: 48px;
-    text-align: center;
     margin-left: 2px;
     border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__backspace {
+
+    }
+}
+
+.backspace {
+    width: 100px;
 }
 
 .key__escape {

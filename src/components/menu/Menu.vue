@@ -22,7 +22,7 @@ const cards = ref([
 
 <template>
   <div class="menu__wrapper">
-		{{ store.difficult }}
+		{{ 'Chosen Difficult: ' + store.difficult }}
     <div class="menu__cards">
       <MenuCard v-for="(card, index) of cards" :card="card" :key="index"/>
     </div>

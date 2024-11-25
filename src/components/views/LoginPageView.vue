@@ -33,7 +33,7 @@ function Login() {
       </div>
       <input v-model="store.name" class="login-page__input" type="text" @keydown.enter="Login">
       <button class="login-page__button" @click="Login">
-        Let's Start
+        Login
       </button>
     </div>
     <Footer />
@@ -47,7 +47,8 @@ function Login() {
   width:               100%;
   height:              100vh;
   background-color:    var(--imperator);
-  @include font-family;
+	font-weight: 600;
+  @include host-grotesk;
 
 	&__content {
 		height:          90%;
@@ -70,7 +71,7 @@ function Login() {
 		background-color: var(--imperator);
 		padding: 10px;
 		font-size: 18px;
-		@include font-family;
+		@include host-grotesk;
 	}
 
 	&__button {
@@ -85,10 +86,12 @@ function Login() {
 		background-color: var(--sparrow);
 		color: var(--snow);
 		text-decoration: none;
-		@include font-family;
+		font-weight: 600;
+		@include host-grotesk;
 
 		&:hover {
 			background-color: var(--sparrow-light);
+			cursor: pointer;
 		}
 
 		&:active {

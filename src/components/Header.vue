@@ -4,9 +4,7 @@
 
 <template>
   <div class="header">
-    <div class="header__title">
-      {{ 'KEYBOARD SAMURAI' }}
-    </div>
+    <h1 class="header__title">KEYBOARD SAMURAI</h1>
   </div>
 </template>
 
@@ -21,12 +19,13 @@
 	background-color:    var(--sparrow);
 	font-family:         "Host Grotesk", sans-serif;
 	font-optical-sizing: auto;
-	font-weight:         600;
+	font-weight:         500;
 	font-style:          normal;
 
 	&__title {
 		font-size: 24px;
-		@include font-family;
+		font-weight: 700;
+		@include raleway;
 	}
 }
 </style>

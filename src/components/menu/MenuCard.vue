@@ -1,7 +1,12 @@
 <script setup>
+import { useKeyboardStore } from '@/store/store.js'
+import { ref } from 'vue'
+
 defineProps({
   card: Object,
 })
+
+const store = useKeyboardStore()
 
 /** Установка сложности игры */
 function setDifficult(dif) {
@@ -25,7 +30,7 @@ function setDifficult(dif) {
   justify-content: center;
   align-items: center;
   gap: 6px;
-  border: 2px solid var(--snow);
+  border: 3px solid var(--snow);
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -56,6 +61,8 @@ function setDifficult(dif) {
     justify-content: center;
     align-items: end;
     padding-bottom: 30px;
+    font-weight: 600;
+    @include raleway;
 
     &:hover {
       cursor: pointer;

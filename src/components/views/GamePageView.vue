@@ -1,7 +1,7 @@
 <script setup>
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
-import Keyboard from '@/components/Keyboard.vue'
+import Keyboard from '@/components/keyboard/Keyboard.vue'
 </script>
 
 <template>
@@ -23,6 +23,7 @@ import Keyboard from '@/components/Keyboard.vue'
 	width:               100%;
 	height:              100vh;
 	background-color:    var(--imperator);
+	@include host-grotesk;
 
 	&__content {
 		height:          90%;
