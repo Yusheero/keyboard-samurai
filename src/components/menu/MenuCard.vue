@@ -62,7 +62,7 @@ function setDifficult(dif) {
     align-items: end;
     padding-bottom: 30px;
     font-weight: 600;
-    @include raleway;
+    @include font-family-600;
 
     &:hover {
       cursor: pointer;

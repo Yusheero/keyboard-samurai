@@ -48,7 +48,7 @@ function Login() {
   height:              100vh;
   background-color:    var(--imperator);
 	font-weight: 600;
-  @include host-grotesk;
+  @include font-family-600;
 
 	&__content {
 		height:          90%;
@@ -71,7 +71,7 @@ function Login() {
 		background-color: var(--imperator);
 		padding: 10px;
 		font-size: 18px;
-		@include host-grotesk;
+		@include font-family-600;
 	}
 
 	&__button {
@@ -87,7 +87,7 @@ function Login() {
 		color: var(--snow);
 		text-decoration: none;
 		font-weight: 600;
-		@include host-grotesk;
+		@include font-family-600;
 
 		&:hover {
 			background-color: var(--sparrow-light);

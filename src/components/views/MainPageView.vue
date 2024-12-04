@@ -33,7 +33,7 @@ const store = useKeyboardStore()
 		justify-content: center;
 		align-items:     center;
 		gap:             5px;
-		@include host-grotesk;
+		@include font-family-600;
 	}
 }
 </style>

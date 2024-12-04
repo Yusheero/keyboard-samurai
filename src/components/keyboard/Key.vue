@@ -1,12 +1,12 @@
 <script setup>
 defineProps({
   itemValue: String,
-  itemClass: String
+  itemClass: String,
 })
 </script>
 
 <template>
-  <div class="common">{{ itemValue }}</div>
+  <div class="common" :class="[itemClass]">{{ itemValue }}</div>
 </template>
 
 <style scoped lang="scss">
@@ -14,7 +14,6 @@ defineProps({
     width: 50px;
     height: 50px;
     float: left;
-    cursor: pointer;
     background-color: #fff;
     color: #000000;
     line-height: 48px;
@@ -23,53 +22,89 @@ defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 15px;
 
     &__backspace {
-
+        width: 100px;
+        background-image: url(../../assets/icons/move-left.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
-}
 
-.backspace {
-    width: 100px;
-}
+    &__backspace {
+        width: 100px;
+    }
 
-.key__escape {
-    background-color: rgb(197, 29, 29);
-}
+    &__tab {
+        width: 75px;
+    }
 
-.key__controls {
-    background-color: rgb(28, 95, 37);
-}
+    &__slash {
+        width: 75px;
+    }
 
-.key__backspace {
-    width: 100px;
-}
+    &__caps {
+        width: 90px;
+    }
 
-.key__tab {
-    width: 75px;
-}
+    &__enter {
+        width: 114px;
+    }
 
-.key__slash {
-    width: 75px;
-}
+    &__shift-left {
+        width: 128px;
+    }
 
-.key__caps {
-    width: 90px;
-}
+    &__shift-right {
+        width: 100px;
+    }
 
-.key__enter {
-    width: 112px;
-}
+    &__space {
+        width: 303px;
+    }
 
-.key__shift {
-    width: 100px;
-}
+    &__ctrl {
+        width: 70px;
+    }
 
-.key__space {
-    width: 300px;
-}
+    &__win {
+        width: 70px;
+        background-image: url(../../assets/icons/grid-2x2.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-.key__empty {
-    width: 70px;
+    &__alt {
+        width: 70px;
+    }
+
+    &__fn {
+        width: 70px;
+    }
+
+    &__arrow-top {
+        width: 50px;
+        background-image: url(../../assets/icons/arrow-top.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &__arrow-left {
+        width: 50px;
+        background-image: url(../../assets/icons/arrow-left.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &__arrow-bottom {
+        width: 50px;
+        background-image: url(../../assets/icons/arrow-bottom.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &__arrow-right {
+        width: 50px;
+        background-image: url(../../assets/icons/arrow-right.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
 </style>

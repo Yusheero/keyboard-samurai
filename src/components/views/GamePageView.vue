@@ -2,15 +2,17 @@
 import Footer from '@/components/Footer.vue'
 import Header from '@/components/Header.vue'
 import Keyboard from '@/components/keyboard/Keyboard.vue'
+import { useKeyboardStore } from '@/store/store.js'
+
+const store = useKeyboardStore()
 </script>
 
 <template>
   <div class="game-page">
     <Header />
     <div class="game-page__content">
-      <div class="table">
-        <Keyboard class="keyboard" />
-      </div>
+			<input class="game-page__window" v-model="store.textInput" type="text">
+			<Keyboard class="keyboard" />
     </div>
     <Footer />
   </div>
@@ -23,7 +25,7 @@ import Keyboard from '@/components/keyboard/Keyboard.vue'
 	width:               100%;
 	height:              100vh;
 	background-color:    var(--imperator);
-	@include host-grotesk;
+	@include font-family-600;
 
 	&__content {
 		height:          90%;
@@ -31,7 +33,14 @@ import Keyboard from '@/components/keyboard/Keyboard.vue'
 		flex-direction:  column;
 		justify-content: center;
 		align-items:     center;
-		gap:             5px;
+		gap: 20px;
+	}
+
+	&__window {
+		background-color: #fff;
+		border-radius: 8px;
+		width: 790px;
+		height: 100px;
 	}
 }
 

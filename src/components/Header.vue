@@ -25,7 +25,7 @@
 	&__title {
 		font-size: 24px;
 		font-weight: 700;
-		@include raleway;
+		@include font-family-700;
 	}
 }
 </style>

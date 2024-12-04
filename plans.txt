@@ -3,7 +3,4 @@ build GamePageView
 think through the logic
 
 ru:
-Починить динамические классы у клавиш
 Поменять хранение localStorage на Куки
-Починить и реализовать клавиатуру в GamePageView (Либо через массив и мап, либо через grid-areas)
-Поменять шрифт у Header (Сделать более мощным)
