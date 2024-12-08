@@ -22,7 +22,7 @@ defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
 
     &__backspace {
         width: 100px;

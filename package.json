@@ -13,7 +13,8 @@
   "dependencies": {
     "pinia": "^2.2.6",
     "vue": "^3.4.21",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vue-sounds": "^0.0.9"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.9.2",

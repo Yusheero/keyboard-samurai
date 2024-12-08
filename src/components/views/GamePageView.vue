@@ -9,9 +9,9 @@ const store = useKeyboardStore()
 
 <template>
   <div class="game-page">
-    <Header />
+    <Header router-path="main" />
     <div class="game-page__content">
-			<input class="game-page__window" v-model="store.textInput" type="text">
+			<div class="game-page__text">TEXT</div>
 			<Keyboard class="keyboard" />
     </div>
     <Footer />
@@ -25,7 +25,7 @@ const store = useKeyboardStore()
 	width:               100%;
 	height:              100vh;
 	background-color:    var(--imperator);
-	@include font-family-600;
+	@include dm-sans-700;
 
 	&__content {
 		height:          90%;
@@ -34,6 +34,15 @@ const store = useKeyboardStore()
 		justify-content: center;
 		align-items:     center;
 		gap: 20px;
+	}
+
+	&__text {
+		width: 46.5%;
+		height: 300px;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__window {

@@ -29,10 +29,10 @@ function Login() {
     <Header />
     <div class="login-page__content">
       <div class="login-page__title">
-        {{ 'Call Yourself, Samurai' }}
+        {{ '自分をサムライと名乗ります' }}
       </div>
       <input v-model="store.name" class="login-page__input" type="text" @keydown.enter="Login">
-      <button class="login-page__button" @click="Login">
+      <button class="button login-page__button" @click="Login">
         Login
       </button>
     </div>
@@ -48,7 +48,7 @@ function Login() {
   height:              100vh;
   background-color:    var(--imperator);
 	font-weight: 600;
-  @include font-family-600;
+  @include poppins-600;
 
 	&__content {
 		height:          90%;
@@ -71,32 +71,11 @@ function Login() {
 		background-color: var(--imperator);
 		padding: 10px;
 		font-size: 18px;
-		@include font-family-600;
+		@include poppins-600;
 	}
 
-	&__button {
-		border:        2px solid var(--snow);
-		border-radius: 5px;
-		width:         320px;
-		height:        40px;
-		display:         flex;
-		flex-direction:  column;
-		justify-content: center;
-		align-items:     center;
-		background-color: var(--sparrow);
-		color: var(--snow);
-		text-decoration: none;
-		font-weight: 600;
-		@include font-family-600;
-
-		&:hover {
-			background-color: var(--sparrow-light);
-			cursor: pointer;
-		}
-
-		&:active {
-			background-color: var(--sparrow-dark);
-		}
-	}
+  &__button {
+    width: 325px;
+  }
 }
 </style>

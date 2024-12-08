@@ -1,6 +1,6 @@
-update and styling README
-build GamePageView
-think through the logic
+Текущая задача: 
+Реализовать анимацию нажатия по клавишам
 
-ru:
+
+Задачи: 
 Поменять хранение localStorage на Куки

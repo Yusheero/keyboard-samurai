@@ -12,6 +12,7 @@
 	--gardener-light: #cc282e;
 	--gardener-dark:  #a01317;
 	--redtree:        #6d1d2a;
+	--blacked: #0e0e0e;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,8 +64,25 @@ table {
 	border-spacing: 0;
 }
 
-.router {
-	&__button {
-		padding: 0 10px;
+/** Основные стили */
+
+.button {
+	padding: 12px;
+	background-color: var(--sparrow);
+	color: var(--snow);
+	display:         flex;
+	flex-direction:  column;
+	justify-content: center;
+	align-items:     center;
+	border-radius: 5px;
+	border: 2px solid var(--snow);
+	text-decoration: none;
+	@include poppins-700;
+
+	&:hover {
+		background-color: var(--samurai);
+		color: var(--blacked);
+		transition: background-color .5s, color .5s;
+		cursor: pointer;
 	}
 }

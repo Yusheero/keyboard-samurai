@@ -12,11 +12,11 @@ const store = useKeyboardStore()
 
 /** Данные для карточек с сложностью */
 const cards = ref([
-  { difficult: 'easy', image: image1 },
-  { difficult: 'middle', image: image2 },
-  { difficult: 'hard', image: image3 },
-  { difficult: 'hardcore', image: image4 },
-  { difficult: 'god', image: image5 },
+  { difficult: 'EASY', image: image1 },
+  { difficult: 'MIDDLE', image: image2 },
+  { difficult: 'HARD', image: image3 },
+  { difficult: 'HARDCORE', image: image4 },
+  { difficult: 'GOD', image: image5 },
 ])
 </script>
 
@@ -26,9 +26,8 @@ const cards = ref([
     <div class="menu__cards">
       <MenuCard v-for="(card, index) of cards" :card="card" :key="index"/>
     </div>
-
-    <router-link class="menu__button router__button" to="/game">
-      Start Training
+    <router-link class="button router__button" to="/game">
+      START
     </router-link>
   </div>
 </template>

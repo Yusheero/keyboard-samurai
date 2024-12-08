@@ -18,7 +18,7 @@
 	height: 5%;
 	color: var(--snow);
 	background-color: var(--sparrow);
-	@include font-family-600;
+	@include poppins-600;
 
 	&__link {
 		width: 25px;
