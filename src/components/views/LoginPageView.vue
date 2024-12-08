@@ -2,7 +2,6 @@
 import { useKeyboardStore } from '@/store/store.js'
 import { useRouter } from 'vue-router'
 import Footer from '../Footer.vue'
-
 import Header from '../Header.vue'
 
 const router = useRouter()

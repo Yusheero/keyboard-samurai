@@ -8,6 +8,7 @@ defineProps({
 const router = useRouter()
 
 function buttonEvent(routerPath) {
+	console.log('path changed');
   router.push('/' + routerPath);
 }
 </script>

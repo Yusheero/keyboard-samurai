@@ -1,142 +1,130 @@
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import Key from './Key.vue'
 import { useKeyboardStore } from '@/store/store.js'
 
 const store = useKeyboardStore()
-
-onMounted(() => document.addEventListener("keydown", onKey))
-
-onUnmounted(() => document.removeEventListener("keydown", onKey))
-
-function onKey(event) { 
-  console.log(event)
-  for (const symbol of store.textInput) {
-    console.log('dds');
-  }
-}
 </script>
 
 <template>
   <div class="keyboard">
     <div id="keyboard" class="keyboard-region">
-    <div class="keyboard-region__header">
-      <Key :itemValue="'ESC'" :itemClass="'common__escape'" />
-      <div class="keyboard-region__row">
-        <Key :itemValue="'F1'" />
-        <Key :itemValue="'F2'" />
-        <Key :itemValue="'F3'" />
-        <Key :itemValue="'F4'" />
-      </div>
-      
-      <div class="keyboard-region__row">
-        <Key :itemValue="'F5'" />
-        <Key :itemValue="'F6'" />
-        <Key :itemValue="'F7'" />
-        <Key :itemValue="'F8'" />
-      </div>
+      <div class="keyboard-region__header">
+        <Key :itemValue="'ESC'" :itemClass="'common__escape'" />
+        <div class="keyboard-region__row">
+          <Key :item-value="'F1'" />
+          <Key :item-value="'F2'" />
+          <Key :item-value="'F3'" />
+          <Key :item-value="'F4'" />
+        </div>
+        
+        <div class="keyboard-region__row">
+          <Key :item-value="'F5'" />
+          <Key :item-value="'F6'" />
+          <Key :item-value="'F7'" />
+          <Key :item-value="'F8'" />
+        </div>
 
-      <div class="keyboard-region__row">
-        <Key :itemValue="'F9'" />
-        <Key :itemValue="'F10'" />
-        <Key :itemValue="'F11'" />
-        <Key :itemValue="'F12'" />
-      </div class="keys-container">
+        <div class="keyboard-region__row">
+          <Key :item-value="'F9'" />
+          <Key :item-value="'F10'" />
+          <Key :item-value="'F11'" />
+          <Key :item-value="'F12'" />
+        </div class="keys-container">
 
-      <div class="keyboard-region__row">
-        <Key :itemValue="'DEL'" />
-        <div class="keyboard-region__volume">
-          <div class="volume-button"></div>
+        <div class="keyboard-region__row">
+          <Key :item-value="'DEL'" />
+          <div class="keyboard-region__volume">
+            <div class="volume-button"></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="keyboard-region__row">
-      <Key :itemValue="'` ~'" :itemClass="'common__escape'" />
-      <Key :itemValue="'1'" />
-      <Key :itemValue="'2'" />
-      <Key :itemValue="'3'" />
-      <Key :itemValue="'4'" />
-      <Key :itemValue="'5'" />
-      <Key :itemValue="'6'" />
-      <Key :itemValue="'7'" />
-      <Key :itemValue="'8'" />
-      <Key :itemValue="'9'" />
-      <Key :itemValue="'0'" />
-      <Key :itemValue="'-'" />
-      <Key :itemValue="'='" />
-      <Key :itemValue="''" :itemClass="'common__backspace'" />
-      <Key :itemValue="'HOME'" />
-    </div>
-
-    <div class="keyboard-region__row">
-      <Key :itemValue="'TAB'" :itemClass="'common__tab'" />
-      <Key :itemValue="'Q'" />
-      <Key :itemValue="'W'" />
-      <Key :itemValue="'E'" />
-      <Key :itemValue="'R'" />
-      <Key :itemValue="'T'" />
-      <Key :itemValue="'Y'" />
-      <Key :itemValue="'U'" />
-      <Key :itemValue="'I'" />
-      <Key :itemValue="'O'" />
-      <Key :itemValue="'P'" />
-      <Key :itemValue="'['" />
-      <Key :itemValue="']'" />
-      <Key :itemValue="'\|/'" :itemClass="'common__slash'" />
-      <Key :itemValue="'PGUP'" />
-    </div>
-
-    <div class="keyboard-region__row">
-      <Key :itemValue="'CAPS'" :itemClass="'common__caps'" />
-      <Key :itemValue="'A'" />
-      <Key :itemValue="'S'" />
-      <Key :itemValue="'D'" />
-      <Key :itemValue="'F'" />
-      <Key :itemValue="'G'" />
-      <Key :itemValue="'H'" />
-      <Key :itemValue="'J'" />
-      <Key :itemValue="'K'" />
-      <Key :itemValue="'L'" />
-      <Key :itemValue="': ;'" />
-      <Key :itemValue="'KW'" />
-      <Key :itemValue="'ENTER'" :itemClass="'common__enter'" />
-      <Key :itemValue="'PGDN'" />
-    </div>
-
-    <div class="keyboard-region__row">
-      <Key :itemValue="'SHIFT'" :itemClass="'common__shift-left'" />
-      <Key :itemValue="'Z'" />
-      <Key :itemValue="'X'" />
-      <Key :itemValue="'C'" />
-      <Key :itemValue="'V'" />
-      <Key :itemValue="'B'" />
-      <Key :itemValue="'N'" />
-      <Key :itemValue="'M'" />
-      <Key :itemValue="','" />
-      <Key :itemValue="'.'" />
-      <Key :itemValue="'/'" />
-      <Key :itemValue="'SHIFT'" :itemClass="'common__tab'" />
-      <Key :itemValue="''" :itemClass="'common__arrow-top'" />
-    </div>
-
-    <div class="keyboard-region__row">
-      <div class="keyboard-region__row row-margin">
-        <Key :itemValue="'CTRL'" :itemClass="'common__ctrl'" />
-        <Key :itemValue="''" :itemClass="'common__win'" />
-        <Key :itemValue="'ALT'" :itemClass="'common__alt'" />
-        <Key :itemValue="''" :itemClass="'common__space'" />
-        <Key :itemValue="'ALT'" :itemClass="'common__alt'" />
-        <Key :itemValue="'FN'" :itemClass="'common__fn'" />
+      <div class="keyboard-region__row">
+        <Key :item-value="'` ~'" :itemClass="'common__escape'" />
+        <Key :item-value="'1'" />
+        <Key :item-value="'2'" />
+        <Key :item-value="'3'" />
+        <Key :item-value="'4'" />
+        <Key :item-value="'5'" />
+        <Key :item-value="'6'" />
+        <Key :item-value="'7'" />
+        <Key :item-value="'8'" />
+        <Key :item-value="'9'" />
+        <Key :item-value="'0'" />
+        <Key :item-value="'-'" />
+        <Key :item-value="'='" />
+        <Key :item-value="''" :itemClass="'common__backspace'" />
+        <Key :item-value="'HOME'" />
       </div>
-      
-      <Key :itemValue="''" :itemClass="'common__arrow-left'" />
-      <Key :itemValue="''" :itemClass="'common__arrow-bottom'" />
-      <Key :itemValue="''" :itemClass="'common__arrow-right'" />
+
+      <div class="keyboard-region__row">
+        <Key :item-value="'TAB'" :itemClass="'common__tab'" />
+        <Key :item-value="'Q'" />
+        <Key :item-value="'W'" />
+        <Key :item-value="'E'" />
+        <Key :item-value="'R'" />
+        <Key :item-value="'T'" />
+        <Key :item-value="'Y'" />
+        <Key :item-value="'U'" />
+        <Key :item-value="'I'" />
+        <Key :item-value="'O'" />
+        <Key :item-value="'P'" />
+        <Key :item-value="'['" />
+        <Key :item-value="']'" />
+        <Key :item-value="'\|/'" :itemClass="'common__slash'" />
+        <Key :item-value="'PGUP'" />
+      </div>
+
+      <div class="keyboard-region__row">
+        <Key :item-value="'CAPS'" :itemClass="'common__caps'" />
+        <Key :item-value="'A'" />
+        <Key :item-value="'S'" />
+        <Key :item-value="'D'" />
+        <Key :item-value="'F'" />
+        <Key :item-value="'G'" />
+        <Key :item-value="'H'" />
+        <Key :item-value="'J'" />
+        <Key :item-value="'K'" />
+        <Key :item-value="'L'" />
+        <Key :item-value="': ;'" />
+        <Key :item-value="'KW'" />
+        <Key :item-value="'ENTER'" :itemClass="'common__enter'" />
+        <Key :item-value="'PGDN'" />
+      </div>
+
+      <div class="keyboard-region__row">
+        <Key :item-value="'SHIFT'" :itemClass="'common__shift-left'" />
+        <Key :item-value="'Z'" />
+        <Key :item-value="'X'" />
+        <Key :item-value="'C'" />
+        <Key :item-value="'V'" />
+        <Key :item-value="'B'" />
+        <Key :item-value="'N'" />
+        <Key :item-value="'M'" />
+        <Key :item-value="','" />
+        <Key :item-value="'.'" />
+        <Key :item-value="'/'" />
+        <Key :item-value="'SHIFT'" :itemClass="'common__tab'" />
+        <Key :item-value="''" :itemClass="'common__arrow-top'" />
+      </div>
+
+      <div class="keyboard-region__row">
+        <div class="keyboard-region__row row-margin">
+          <Key :item-value="'CTRL'" :itemClass="'common__ctrl'" />
+          <Key :item-value="''" :itemClass="'common__win'" />
+          <Key :item-value="'ALT'" :itemClass="'common__alt'" />
+          <Key :item-value="''" :itemClass="'common__space'" />
+          <Key :item-value="'ALT'" :itemClass="'common__alt'" />
+          <Key :item-value="'FN'" :itemClass="'common__fn'" />
+        </div>
+        
+        <Key :item-value="''" :itemClass="'common__arrow-left'" />
+        <Key :item-value="''" :itemClass="'common__arrow-bottom'" />
+        <Key :item-value="''" :itemClass="'common__arrow-right'" />
+      </div>
     </div>
   </div>
-  </div>
-  
 </template>
 
 <style scoped lang="scss">

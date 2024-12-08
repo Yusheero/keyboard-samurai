@@ -1,12 +1,37 @@
 <script setup>
-defineProps({
-  itemValue: String,
-  itemClass: String,
+import { onMounted } from 'vue';
+
+const props = defineProps({
+    itemValue: String,
+    itemClass: String,
 })
+
+onMounted(() => {
+    document.addEventListener("keydown", keyDown);
+    document.addEventListener("keyup", keyUp);
+
+    const gameStart = () => {
+        
+    }
+})
+
+function keyDown(event) {
+    const element = document.getElementById(props.itemValue);
+    if (event.key === props.itemValue.toLowerCase()) {
+        element.style.backgroundColor = '#666'  
+    }
+}
+
+function keyUp(event) {
+    const element = document.getElementById(props.itemValue);
+    if (event.key === props.itemValue.toLowerCase()) {
+        element.style.backgroundColor = '#fff'
+    }
+}
 </script>
 
 <template>
-  <div class="common" :class="[itemClass]">{{ itemValue }}</div>
+    <div :id="itemValue" class="common" :class="[itemClass]">{{ itemValue }}</div>
 </template>
 
 <style scoped lang="scss">

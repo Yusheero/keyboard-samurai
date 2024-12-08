@@ -9,26 +9,15 @@ import { useKeyboardStore } from '@/store/store.js'
 import { ref } from 'vue'
 
 const store = useKeyboardStore()
-
-/** Данные для карточек с сложностью */
-const cards = ref([
-  { difficult: 'EASY', image: image1 },
-  { difficult: 'MIDDLE', image: image2 },
-  { difficult: 'HARD', image: image3 },
-  { difficult: 'HARDCORE', image: image4 },
-  { difficult: 'GOD', image: image5 },
-])
 </script>
 
 <template>
   <div class="menu__wrapper">
 		{{ 'Chosen Difficult: ' + store.difficult }}
     <div class="menu__cards">
-      <MenuCard v-for="(card, index) of cards" :card="card" :key="index"/>
+      <MenuCard v-for="(card, index) of store.cards" :card="card" :key="index"/>
     </div>
-    <router-link class="button router__button" to="/game">
-      START
-    </router-link>
+    <router-link class="button router__button" to="/game">START</router-link>
   </div>
 </template>
 

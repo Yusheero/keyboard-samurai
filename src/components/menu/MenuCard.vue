@@ -16,15 +16,12 @@ function setDifficult(dif) {
 
 <template>
   <div class="card">
-    <img class="card__image" :src="card.image">
-    <button @click="setDifficult(card.difficult)" class="button">{{ card.difficult }}</button>
+    <button @click="setDifficult(card.difficult)" class="button card__button">{{ card.difficult }}</button>
   </div>
 </template>
 
 <style scoped lang="scss">
 .card {
-  height: 400px;
-  width: 200px;
   display:         flex;
   flex-direction: column;
   justify-content: center;
@@ -34,11 +31,10 @@ function setDifficult(dif) {
   overflow: hidden;
   position: relative;
 
-  &:hover {
-    -webkit-box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
-    -moz-box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
-    box-shadow: 0px 0px 20px 12px rgba(249, 249, 249, 0.4);
-    transition: box-shadow .5s;
+  &__button {
+    height: 200px;
+    width: 200px;
+    font-size: 20px;
   }
 
   &__image {
